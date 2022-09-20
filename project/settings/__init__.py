@@ -5,9 +5,9 @@ from .middlewares import *  # isort:skip
 
 from .assets import *
 from .databases import *
+from .debug_toolbar import *
+from .heroku import *
 from .i18n import *
 from .messages import *
 from .security import *
 from .templates import *
-
-from .debug_toolbar import *  # isort:skip

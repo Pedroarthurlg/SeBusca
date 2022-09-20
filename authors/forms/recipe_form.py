@@ -19,7 +19,7 @@ class AuthorRecipeForm(forms.ModelForm):
         model = Recipe
         fields = 'title', 'description', 'preparation_time', \
             'preparation_time_unit', 'servings', 'servings_unit', \
-            'preparation_steps', 'cover'
+            'preparation_steps'
         widgets = {
             'cover': forms.FileInput(
                 attrs={
@@ -28,15 +28,17 @@ class AuthorRecipeForm(forms.ModelForm):
             ),
             'servings_unit': forms.Select(
                 choices=(
-                    ('Porções', 'Porções'),
-                    ('Pedaços', 'Pedaços'),
-                    ('Pessoas', 'Pessoas'),
+                    ('Cartão de Débito', 'Cartão de Débito'),
+                    ('Cartão de Crédito', 'Cartão de Crédito'),
+                    ('Boleto Bancário', 'Boleto Bancário'),
+                    ('PIX', 'PIX'),
                 ),
             ),
             'preparation_time_unit': forms.Select(
                 choices=(
-                    ('Minutos', 'Minutos'),
-                    ('Horas', 'Horas'),
+                    ('Dias', 'Dias'),
+                    ('Semanas', 'Semanas'),
+                    ('Meses', 'Meses'),
                 ),
             ),
         }

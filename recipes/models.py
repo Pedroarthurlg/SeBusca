@@ -36,14 +36,19 @@ class RecipeManager(models.Manager):
 
 class Recipe(models.Model):
     objects = RecipeManager()
-    title = models.CharField(max_length=65, verbose_name=_('Title'))
-    description = models.CharField(max_length=165)
+    title = models.CharField(max_length=65, verbose_name=_('Título'))
+    description = models.CharField(
+        max_length=165, verbose_name=_('Modo de Entrega'))
     slug = models.SlugField(unique=True)
-    preparation_time = models.IntegerField()
-    preparation_time_unit = models.CharField(max_length=65)
-    servings = models.IntegerField()
-    servings_unit = models.CharField(max_length=65)
-    preparation_steps = models.TextField()
+    preparation_time = models.IntegerField(verbose_name=_('Prazo'))
+    preparation_time_unit = models.CharField(
+        max_length=65, verbose_name=_('Escala'))
+    servings = models.IntegerField(
+        verbose_name=_('Valor máximo pela tarefa (R$)'))
+    servings_unit = models.CharField(
+        max_length=65, verbose_name=_('Forma de Pagamento'))
+    preparation_steps = models.TextField(
+        verbose_name=_('Descreva sua necessidade:'))
     preparation_steps_is_html = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -126,7 +126,7 @@ class RecipeListViewTag(RecipeListViewBase):
         ).first()
 
         if not page_title:
-            page_title = 'No recipes found'
+            page_title = 'Nenhum serviço encontrado'
 
         page_title = f'{page_title} - Tag |'
 

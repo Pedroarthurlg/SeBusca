@@ -70,7 +70,7 @@ class DashboardRecipe(View):
 
             recipe.save()
 
-            messages.success(request, 'Sua receita foi salva com sucesso!')
+            messages.success(request, 'Sua solicitação foi salva com sucesso!')
             return redirect(
                 reverse(
                     'authors:dashboard_recipe_edit', args=(
@@ -90,5 +90,5 @@ class DashboardRecipeDelete(DashboardRecipe):
     def post(self, *args, **kwargs):
         recipe = self.get_recipe(self.request.POST.get('id'))
         recipe.delete()
-        messages.success(self.request, 'Deleted successfully.')
+        messages.success(self.request, 'Deletado com sucesso.')
         return redirect(reverse('authors:dashboard'))

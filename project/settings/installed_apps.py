@@ -12,4 +12,5 @@ INSTALLED_APPS = [
     'recipes',
     'authors',
     'tag',
+    'leilao',
 ]

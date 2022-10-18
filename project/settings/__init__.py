@@ -13,4 +13,4 @@ from .messages import *
 from .security import *
 from .templates import *
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
